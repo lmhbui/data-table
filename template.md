@@ -4,7 +4,7 @@
 - [template通过with取值方法](#取值) 
 - [如何解决标签冲突](#标签冲突) 
 - [template中的三元运算](#三元运算) 
-- [提供的forEach方法](#提供的forEach方法) 
+- [提供的forEach方法](#提供的foreach方法) 
 - [print的使用](#使用print方法) 
 ```js
 语法
