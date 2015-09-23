@@ -1,4 +1,11 @@
 #渲染模板
+- [template中的变量](#变量) 
+- [template中的HTML转义](#转义)
+- [template通过with取值方法](#取值) 
+- [如何解决标签冲突](#标签冲突) 
+- [template中的三元运算](#三元运算) 
+- [提供的forEach方法](#提供的forEach方法) 
+- [print的使用](#使用print方法) 
 ```js
 语法
 _.template(templateString,[settings])
@@ -16,7 +23,7 @@ console.log(compiled({name: 'moe'});）
 => "hello: moe"
 
 ```
-#HTML转义
+#转义
 ```js
 插入一个值并进行HTML转义用<%- … %>
 例:
@@ -76,7 +83,8 @@ console.log(template({name: "Mustache"});)
 输出class样式结果：如果is_overdue为1则class="expire",反之为空
 
 ```
-#forEach
+#提供的forEach方法
+
 ```js
 underscore提供的forEach
 var tml = "<ul id={-id}>" +  
@@ -99,7 +107,7 @@ tmp = _.template(tml, {
      <li>2:jim</li>
  </ul>
 ```
-#print
+#使用print方法
 
 ```js
 在JavaScript代码中使用 print. 有时候会比使用 <%= ... %> 更方便
