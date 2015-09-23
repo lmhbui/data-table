@@ -2,4 +2,4 @@
 data-table help
 
 
-underscorejs模板使用帮助
+[underscorejs模板使用示例](template.md)
