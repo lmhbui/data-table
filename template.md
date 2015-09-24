@@ -4,8 +4,8 @@
 - [if else使用示例](#if else使用示例) 
 - [三元表达式使用示例](#三元表达式使用示例) 
 - [其他](#其他) 
-#template初解
 
+#template初解
 ```js
 语法
 _.template(templateString,[settings])
