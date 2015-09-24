@@ -4,11 +4,20 @@ data-table help
 /**
 * 表格插件
 * url 接口的地址
+* headTemplate 渲染头部模板
 * rowTemplate  要渲染的模板
 * page_size多少行数据后分页
 */
 var table = $('#datatable').dataTable({
-    url: '/cms/bulletins',
+    url: url,
+    headTemplate:function(rowData, inex, list){
+       var tpl = '';
+        tpl += '<tr>';
+        tpl += '    <td data-name="id" width="90" class="tac"><%= id %></td>';
+        tpl += '    <td data-name="title" width="200"><%= title %></td>';
+        tpl += '</tr>';
+        return $.template(tpl, rowData);
+    },
     rowTemplate: function (rowData, inex, list) {
         var tpl = '';
         tpl += '<tr>';
