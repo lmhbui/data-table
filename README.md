@@ -2,7 +2,7 @@
 data-table help
 ```js
 /**
-*表格插件
+* 表格插件
 * url 接口的地址
 * rowTemplate  要渲染的模板
 * page_size多少行数据后分页
