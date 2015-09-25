@@ -40,9 +40,10 @@ var table = $('#datatable').dataTable({
 /**
 * 表格插件 用法二
 * url 接口的地址
-* headTemplate 渲染头部模板从页面中获得
-* rowTemplate  要渲染的模板从页面中获得
-* 或者headTemplate和rowTemplate中任意一个写在模板中另外一部分在页面中渲染均可，例如：方法三
+* headTemplate 渲染头部模板从页面中获得 获取的类名为head-tpl
+* rowTemplate  要渲染的模板从页面中获得 获取的类名为body-tpl
+* 或者headTemplate和rowTemplate中任意一个写在模板用id为datatableb包裹起来,其中r任何一部分在页面中渲染，
+* 另外一部分放在js中均可，例如：方法三
 * page_size多少行数据后分页
 */
 <!--html中的代码如下-->
@@ -80,8 +81,9 @@ var table = $('#datatable').dataTable({
 /**
 * 表格插件 用法三
 * url 接口的地址
-* 或者headTemplate和rowTemplate中任意一个写在模板中另外一部分在页面中渲染均可
-* page_size多少行数据后分页
+* 或者headTemplate和rowTemplate中任意一个写在模板用id为datatableb包裹起来,其中r任何一部分在页面中渲染，
+* 另外一部分放在js中均可，例如：方法三
+* page_size多少行数据后分页，可写可不写。
 */
 <!--html中的代码如下-->
 <div id="datatable">
