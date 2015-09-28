@@ -17,27 +17,32 @@ _.template的作用
 
 #普通使用示例
 ```js
-_.template可以用<%= xxxx %>作为变量，也可以用<% … %>执行任意的 JavaScript 代码
-例:
+//_.template可以用<%= xxxx %>作为变量，也可以用<% … %>执行任意的 JavaScript 代码
 var compiled = _.template("hello: <%= name %>");
 console.log(compiled({name: 'moe'});）
-=> "hello: moe"
+<a href="http://jsfiddle.net/1181155148/n81dpwk8/1/"> </a>
+//=> "hello: moe"
 
 ```
 ```js
-插入一个值并进行HTML转义用<%- … %>
-例:
+//输入一个值并进行HTML转义用<%- … %>
 var template = _.template("<b><%- value %></b>");
 console.log(template({value: '<script>'});)
-=> "<b>&lt;script&gt;</b>"
+//=> "<b>&lt;script&gt;</b>"
 
 ```
+<http://jsfiddle.net/1181155148/jcm3when/2/>
 ```js
 
- template 通过 with 语句来取得 data 所有的值，也可以在 variable 设置里指定一个变量名. 这样能显著提升模板的渲染速度。
-例:
-_.template("Using 'with': <%= data.answer %>", {variable: 'data'})({answer: 'no'});
-=> "Using 'with': no"
+// template 通过 with 语句来取得 data 所有的值，也可以在 variable 设置里指定一个变量名. 这样能显著提升模板的渲染速度。
+var a= _.template("Using 'with': <%= data.answer %>", {
+    variable: 'data'
+})({
+    answer: 'no'
+});
+$("#a").html(a);
+//=>Using 'with': no
+http://jsfiddle.net/1181155148/otd4f4kk/1/
 
 ```
 #if else使用示例
@@ -66,12 +71,24 @@ _.template("Using 'with': <%= data.answer %>", {variable: 'data'})({answer: 'no'
 ```
 #循环示例
 ```js
-例1：
-    $(function(){
-        var data=[{name:'carl'},{name:'carl'},{name:'carl'}];
-        var t=_.template($("#tpl").html());
-        $("#container").html(t(data));
-    });
+var tmp = '<% for (var i = 0; i < count; i++) { %>';
+tmp += '<div class="tmp"><%= i %></div>';
+tmp += '<% } %>';
+
+var tem = _.template(tmp)({
+    count: 5
+});
+$("#a").html(tem);
+//=><div class="tmp">0</div>
+//<div class="tmp">1</div>
+//<div class="tmp">2</div>
+//<div class="tmp">3</div>
+//<div class="tmp">4</div>
+http://jsfiddle.net/1181155148/b4owsLkd/
+```
+```js
+
+
 ```
 ```js
 例2：
