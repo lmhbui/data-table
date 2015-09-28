@@ -7,8 +7,8 @@
 
 #template初解
 ```js
-语法
-_.template(templateString,[settings])
+//语法
+_.template(templateString, [settings]);
 ```
 ```js
 _.template的作用
