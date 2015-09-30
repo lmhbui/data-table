@@ -1,4 +1,42 @@
 # data-table
+data-table是用于后台表格插件，他基于underscore.js和jquery。所在使用的时候需要引入这两个库。
+data-table是用来展示的，数据是ajax请求之后得到的；展示成怎么样,而是由模板来控制的。
+
+
+# 第一个例子
+```html
+<div id="datatable">
+    <script type="text/html" class="head-tpl">
+        <tr >
+            <td width="200">序号</td>
+            <td width="200">LOGO</td>
+            <td>品牌名称</td>
+
+        </tr>
+    </script>
+    <script type="text/html" class="body-tpl">
+        <tr>
+            <td width="200"><%= id %></td>
+            <td width="200"><img src="<%= image_src %>" width="60" height="60" alt="" /></td>
+            <td><%= name %></td>
+        </tr>
+    </script>
+</div>
+```
+上面是html部分的内容，主要是用来控制显示的。一个表格是由两部分模板组成的，头部模板类名写成"head-tpl"， 内容部分类名写成"body-tpl" 这个是约定的，不能随意改。
+```js
+//只要传入ajax请求地址即可。
+$('#datatable').dataTable({
+    url: '/member/list'
+});
+```
+
+
+
+
+
+
+
 data-table help
 ```js
 /**
@@ -82,8 +120,8 @@ var table = $('#datatable').dataTable({
 * 表格插件 用法三
 * url 接口的地址
 * 或者headTemplate和rowTemplate中任意一个写在模板用id为datatableb包裹起来,其中r任何一部分在页面中渲染，
-* 另外一部分放在js中均可，例如：方法三
 * page_size多少行数据后分页，可写可不写。
+* 另外一部分放在js中均可，例如：方法三
 */
 <!--html中的代码如下-->
 <div id="datatable">
